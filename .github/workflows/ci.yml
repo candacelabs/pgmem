@@ -1,0 +1,52 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      GOTOOLCHAIN: local
+      GOFLAGS: "-mod=readonly"
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+
+      - name: Set up Go 1.26.5
+        uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7
+        with:
+          go-version: "1.26.5"
+          cache-dependency-path: go.sum
+
+      - name: Check formatting
+        run: |
+          unformatted="$(gofmt -l .)"
+          if [ -n "${unformatted}" ]; then
+            printf 'Unformatted Go files:\n%s\n' "${unformatted}" >&2
+            exit 1
+          fi
+
+      - name: Enforce Ginkgo behavior tests
+        run: ./scripts/check-test-style.sh
+
+      - name: Vet
+        run: go vet ./...
+
+      - name: Test with the race detector
+        run: go test -race ./...
+
+      - name: Verify generated Gomock translator
+        run: |
+          expected_mock="$(mktemp)"
+          cp mock_translator_test.go "${expected_mock}"
+          go generate ./...
+          diff -u "${expected_mock}" mock_translator_test.go

@@ -1,0 +1,9 @@
+{
+  "destination_repository": "candacelabs/pgmem",
+  "managed_by": "candace-component-export",
+  "schema_version": 2,
+  "source_path": "go/pgmem",
+  "source_repository": "kaashmonee/candace-server",
+  "source_revision": "a3c625d4cc54cdacceea8e7ddfeb8cb0e9eef447",
+  "source_tree_oid": "da853577445c74b172dcc0b1391585860738d201"
+}

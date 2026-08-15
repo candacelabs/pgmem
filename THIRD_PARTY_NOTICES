@@ -1,0 +1,37 @@
+pg-mem
+Copyright (c) 2020 Olivier Guimbal
+https://github.com/oguimbal/pg-mem
+MIT License
+
+This Go port targets pg-mem v3.0.14 at commit
+0fcbf5c2b4826116d67f2fe5e30e3c7a3bbf4eb6. The complete MIT permission and
+disclaimer are reproduced in LICENSE.
+
+pg_query_go
+Copyright (c) 2015 Lukas Fittl
+Copyright (c) 2016-2025 Duboce Labs, Inc. (pganalyze)
+https://github.com/pganalyze/pg_query_go
+BSD 3-Clause License
+
+pg_query_go includes code derived from PostgreSQL. Dependency source archives
+contain the complete BSD-3-Clause and PostgreSQL notices in LICENSE and
+LICENSE.POSTGRESQL. No pg_query_go or PostgreSQL source is copied into this
+repository.
+
+google.golang.org/protobuf
+Copyright (c) 2018 The Go Authors
+https://github.com/protocolbuffers/protobuf-go
+BSD 3-Clause License
+
+The module source archive contains the complete license in LICENSE. No
+protobuf-go source is copied into this repository.
+
+modernc.org/sqlite
+Copyright (c) 2017 The SQLite Authors
+https://gitlab.com/cznic/sqlite
+BSD 3-Clause License
+
+modernc.org/sqlite contains a Go translation of SQLite, whose source is in the
+public domain. The module source archive contains the complete driver license
+in LICENSE and the SQLite dedication in SQLITE-LICENSE. No modernc.org/sqlite
+or SQLite source is copied into this repository.
