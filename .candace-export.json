@@ -4,6 +4,6 @@
   "schema_version": 2,
   "source_path": "go/pgmem",
   "source_repository": "kaashmonee/candace-server",
-  "source_revision": "6ddd06ea311f1f206920d1ad210835d2ffdf0946",
+  "source_revision": "9b2366917227b2d35fbdc84dbdc3e1b00b2ab11a",
   "source_tree_oid": "da853577445c74b172dcc0b1391585860738d201"
 }
